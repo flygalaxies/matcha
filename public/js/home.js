@@ -13,11 +13,6 @@
     pwd: false
   };
 
-  $('#bgvid').on('ended', function() {
-    console.log('video ended');
-    $(this).play();
-  });
-
   $('#join-us').on('click', function() {
     $('.lead').addClass('hidden');
     $('#home-login').addClass('hidden');
@@ -91,20 +86,20 @@
   }
 
   function validateUsername(login) {
-    var regex = /^([a-zA-Z\-0-9_]{4,17})$/;
+    var regex = /^([a-zA-Z\-0-9_]{3,17})$/;
     return regex.test(login);
   }
 
   function validateUser(name) {
-    var regex = /^([a-zA-Z\-0-9èêéàôîïùñ]{4,17})$/;
+    var regex = /^([a-zA-Z\-0-9èêéàôîïùñ]{3,17})$/;
     return regex.test(name);
   }
 
   function validatePassword(pwd) {
-    var lowercase = /^(?=.*[a-z]).+$/,
+    var lowercase = /^(?=.*[a-z]).+$/, uppercase = /^(?=.*[A-Z]).+$/,
       number = /^(?=.*[0-9]).+$/;
 
-    if (pwd.length > 4 && pwd.length < 17 && number.test(pwd) && lowercase.test(pwd)) {
+    if (pwd.length > 4 && pwd.length < 17 && number.test(pwd) && lowercase.test(pwd) && uppercase.test(pwd)) {
       return (true);
     }
     return (false);

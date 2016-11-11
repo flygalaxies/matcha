@@ -45,7 +45,7 @@ const setNewPassword = (req, res) => {
     Users.updateOne({ _id: ObjectID(id) }, {
       $set: { 'account.password': hash('whirlpool', password) },
     }, (err) => {
-      if (!err) resLog(res, `${user.account.username} has update his password`, { done: 'success' });
+      if (!err) resLog(res, `${user.account.username} has updated his password`, { done: 'success' });
     });
   });
 };

@@ -7,6 +7,7 @@
     "start": "nodemon --exec npm run babel-node -- router.js",
     "babel-node": "babel-node --presets=latest",
     "bower": "bower install",
+    "open-browser": "open \"http://localhost:3333\"",
     "config": "npm install && bower install && npm start"
   },
   "keywords": [
@@ -26,7 +27,10 @@
     "eslint-config-airbnb-base": "^9.0.0",
     "eslint-plugin-import": "^2.1.0",
     "node-sass": "3.11.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "vhost": "3.0.2",
+    "serve-static": "1.11.1",
+    "connect": "3.5.0"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
